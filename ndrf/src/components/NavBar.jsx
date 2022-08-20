@@ -6,11 +6,13 @@ const NavBar = (props) => {
         <Nav>
             {/* <Logo><p>DECENTRALIZED</p></Logo> */}
             <NavMenu>
+
                 <a href='/'>DECENTRALIZED</a>
                 <a href='/'>STATISTICS</a>
                 <a href='/'>DASHBOARD</a>
                 <a href='/'>LOGISTICS</a>
                 <a href='/'>ABOUT</a>
+
             </NavMenu>
             <Wallet>
                 <a href='/'>Connect Wallet</a>
