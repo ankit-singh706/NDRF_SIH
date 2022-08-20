@@ -5,6 +5,7 @@ import Donation from './section/Donation';
 import './App.css'
 import Map from './section/Map';
 import Logistics from './section/Logistics';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/map' element={<Map/>}></Route>
           <Route path='/logistics' element={<Logistics/>}></Route>
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
