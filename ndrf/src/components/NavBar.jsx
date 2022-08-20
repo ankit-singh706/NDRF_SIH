@@ -6,13 +6,11 @@ const NavBar = (props) => {
         <Nav>
             {/* <Logo><p>DECENTRALIZED</p></Logo> */}
             <NavMenu>
-
                 <a href='/'>DECENTRALIZED</a>
                 <a href='/'>STATISTICS</a>
                 <a href='/'>DASHBOARD</a>
                 <a href='/'>LOGISTICS</a>
                 <a href='/'>ABOUT</a>
-
             </NavMenu>
             <Wallet>
                 <a href='/'>Connect Wallet</a>
@@ -73,11 +71,14 @@ const Wallet = styled.div`
     filter: drop-shadow(3px 3px 0px #000000);
     border: 3px solid black;
     border-radius: 35px;
+    transition: filter 150ms ease-out;
     display: flex;
     align-items: center;
     gap: 24px;
     font-size: 19px;
-
+    :hover {
+        filter: drop-shadow(0px 0px 0px #000000);
+    }
     a {
         text-decoration: none;
         color: black;
