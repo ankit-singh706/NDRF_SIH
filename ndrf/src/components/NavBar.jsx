@@ -9,7 +9,7 @@ const NavBar = (props) =>{
                 <a href="/">DECENTRALIZED</a>
                 <a href="/">STATISTICS</a>
                 <a href="/">DASHBOARD</a>
-                <a href="/">LOGISTICS</a>
+                <a href="/logistics">LOGISTICS</a>
                 <a href="/">ABOUT</a>
             </NavMenu>
             <Wallet>

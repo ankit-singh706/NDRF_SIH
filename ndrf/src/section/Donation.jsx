@@ -24,28 +24,28 @@ const Donations = (props) => {
       </Image>
       <BottomSection>
         <Card>
-          <div className="box"></div>
+          <div className="box"><img src='./images/logo_donated.gif' alt="Donated"/></div>
           <div className="textbox">
             <h2>1200+</h2>
             <p>People Donated</p>
           </div>
         </Card>
         <Card>
-          <div className="box"></div>
+          <div className="box"><img src='./images/logo_donated.gif' alt="Donated"/></div>
           <div className="textbox">
             <h2>1200+</h2>
             <p>People Donated</p>
           </div>
         </Card>
         <Card>
-          <div className="box"></div>
+          <div className="box"><img src='./images/logo_donated.gif' alt="Donated"/></div>
           <div className="textbox">
             <h2>1200+</h2>
             <p>People Donated</p>
           </div>
         </Card>
         <Card>
-          <div className="box"></div>
+          <div className="box"><img src='./images/logo_donated.gif' alt="Donated"/></div>
           <div className="textbox">
             <h2>1200+</h2>
             <p>People Donated</p>
@@ -70,7 +70,7 @@ const Donations = (props) => {
       </Floater>
         <Heading><h1>Why Donate?</h1></Heading>
       <DonationReason>
-        <Wrap><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80" alt=""/></Wrap>
+        <Wrap><h2>Tracebility</h2></Wrap>
         <Wrap><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80" alt=""/></Wrap>
         <Wrap><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80" alt=""/></Wrap>
         <Wrap><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80" alt=""/></Wrap>
@@ -230,9 +230,18 @@ const Card = styled.div`
   .box {
     height: 100px;
     width: 100px;
-    border: 1px solid black;
-    display: inline-flex;
+    /* border: 1px solid black; */
+    display: inline-flex;  
   }
+
+  img{
+    border-radius: 30px;
+    /* opacity: 0.8; */
+    /* filter: invert(100%); */
+    
+  }
+
+
 
   .textbox {
     flex-direction: column;
@@ -299,6 +308,7 @@ const Floater = styled.div`
         display: inline-flex;
         font-size: 2rem;
         left: 90px;
+        top: 20px;
         font-family: "Poppins", sans-serif;
         font-weight: 700;
     }
