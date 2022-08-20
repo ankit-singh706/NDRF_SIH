@@ -11,7 +11,9 @@
   "dependencies": {
     "@coreui/coreui": "^4.2.1",
     "@coreui/react": "^4.3.1",
+    "@egjs/react-grid": "^1.12.0",
     "bootstrap": "^5.2.0",
+    "json-server": "^0.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
