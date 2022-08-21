@@ -112,9 +112,23 @@ section {
     border: 3px solid #000;
     box-shadow: #000 4px 4px 0 1px;
     background-color: #00dce6;
-    transition: box-shadow 100ms ease-out;
+    transition: box-shadow 150ms ease-out;
 }
 .button-section:hover {
     /* background-color: #00b4d8; */
-    box-shadow: none;
+    box-shadow: #000 0px 0px 0 0px;
+}
+
+.contentC {
+    width: calc(100% - 110px);
+    border-right: #000 2px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.contentC:nth-last-of-type(1) {
+    border-right: none;
+    /* padding-right: 5px; */
+}
+.update {
+    margin-bottom: 15px;
 }
