@@ -8,6 +8,7 @@ import Map from './section/Map';
 import Logistics from './section/Logistics';
 import Footer from './components/Footer';
 import Incidents from './section/Incidents';
+import { Dropdown } from 'bootstrap'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/map' element={<Map/>}></Route>
           <Route path='/logistics' element={<Logistics/>}></Route>
           <Route path='/incidents' element={<Incidents />}></Route>
+          <Route path='/drop' element={<Dropdown/>}></Route>
         </Routes>
         <Footer/>
       </Router>

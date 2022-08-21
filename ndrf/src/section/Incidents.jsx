@@ -5,9 +5,37 @@ import down from '../assets/down.png'
 import disaster from '../assets/bridge-collapse.webp'
 import Ldisaster from '../assets/long-disaster.png'
 import { MasonryGrid } from '@egjs/react-grid'
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 const Incidents = () => {
-    const [ModalVisible, setModalVisible] = useState(false)
+    const [ModalVisible, setModalVisible] = useState(false);
+    const [type,setType] = useState([]);
+    const [status,setStatus] = useState({});
+
+    const optionTypes = [
+        { value : 'flood',label:'Flood'},
+        { value : 'earthquake',label:'Earthquake'},
+        { value : 'landslide',label:'Landslide'},
+        { value : 'forestfire',label:'Forest Fire'}
+    ];
+    const optionStatus = [
+        { value : 'flood',label:'Flood'},
+        { value : 'flood',label:'Flood'},
+        { value : 'flood',label:'Flood'},
+        { value : 'flood',label:'Flood'}
+    ];
+
+    const customTheme = (theme) =>{
+        return{
+            ...theme,
+            colors:{
+                ...theme.colors,
+                primary25: '#00DCE6',
+                primary: 'black',
+            }
+        }
+    }
     return (
         <>
             <div className='topmargin'></div>
@@ -17,12 +45,39 @@ const Incidents = () => {
                     <div className='filter-item-title'>Filters</div>
                 </div>
                 <div className='filter-item'>
-                    <div className='filter-item-title'>Type</div>
-                    <img className='filter-icon' src={down}></img>
+                <Select
+                    components={makeAnimated()}
+                    theme={customTheme}
+                    className='filter-item-title'
+                    onChange={setType}
+                    options={optionTypes}
+                    placeholder="Select disaster type"
+                    noOptionsMessage={()=> 'This is not a disaster type'}
+                    isSearchable
+                    isMulti
+                    autoFocus
+                    
+                />
+                    {/* <div className='filter-item-title'>Type</div> */}
+                    
+                    {/* <img className='filter-icon' src={down}></img> */}
                 </div>
                 <div className='filter-item'>
-                    <div className='filter-item-title'>Status</div>
-                    <img className='filter-icon' src={down}></img>
+                    {/* <div className='filter-item-title'>Status</div>
+                    <img className='filter-icon' src={down}></img> */}
+                    <Select 
+                    components={makeAnimated()}
+                    noOptionsMessage={()=> 'This is not a status'}  
+                    isMulti
+                    autoFocus
+                    theme={customTheme}
+                    className='filter-item-title'
+                    onChange={setStatus}
+                    options={optionStatus}
+                    placeholder="Select status type"
+                    isSearchable
+                    
+                />
                 </div>
                 <div className='filter-item'>
                     <div className='filter-item-title'>Data</div>
@@ -268,4 +323,4 @@ const Incidents = () => {
     )
 }
 
-export default Incidents
+export default Incidents;

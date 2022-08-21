@@ -34,22 +34,6 @@ const Nav = styled.div`
     z-index: 3;
 `
 
-// const Logo = styled.div`
-//     padding: 4px 12px;
-//     display: inline-block;
-//     background-color: aliceblue;
-//     border: 1px solid black;
-//     border-radius: 20px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     font-size: 24px;
-//     font-weight: 600;
-//     p{
-//         margin: 0;
-//     }
-
-// `
 
 const NavMenu = styled.div`
     padding: 13px 15px;
