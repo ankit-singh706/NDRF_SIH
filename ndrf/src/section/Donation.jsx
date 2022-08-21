@@ -1,80 +1,65 @@
-import React from "react";
+import React,{ useState } from "react";
 import styled from "styled-components";
 import axios from 'axios';
 
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement('script')
+    script.src = src
+    script.onload = () => {
+      resolve(true)
+    }
+    script.onerror = () => {
+      resolve(false)
+    }
+    document.body.appendChild(script)
+    // console.log(document.body)
+    console.log(script.src)
+  })
+}
+
+const __DEV__ = document.domain === 'localhost'
+
 const Donations = (props) => {
 
-  function loadScript(src) {
-    return new Promise((resolve) => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.onload = () => {
-            resolve(true);
-        };
-        script.onerror = () => {
-            resolve(false);
-        };
-        document.body.appendChild(script);
-    });
-  }
+  const [name, setName] = useState('Ankit')
 
-  async function displayRazorpay() {
-    const res = await loadScript(
-        "https://checkout.razorpay.com/v1/checkout.js"
-    );
+	async function displayRazorpay() {
+		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
-    if (!res) {
-        alert("Razorpay SDK failed to load. Are you online?");
-        return;
-    }
+		if (!res) {
+			alert('Razorpay SDK failed to load. Are you online?')
+			return
+		}
 
-    // creating a new order
-    const result = await axios.post("http://localhost:5000/payment/orders");
+		const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
+			t.json()
+		)
 
-    if (!result) {
-        alert("Server error. Are you online?");
-        return;
-    }
+		console.log(data)
 
-    // Getting the order details back
-    const { amount, id: order_id, currency } = result.data;
-
-    const options = {
-        key: "rzp_test_2Kejhoa4u7dArH", // Enter the Key ID generated from the Dashboard
-        amount: amount.toString(),
-        currency: currency,
-        name: "Soumya Corp.",
-        description: "Test Transaction",
-        image: { logo },
-        order_id: order_id,
-        handler: async function (response) {
-            const data = {
-                orderCreationId: order_id,
-                razorpayPaymentId: response.razorpay_payment_id,
-                razorpayOrderId: response.razorpay_order_id,
-                razorpaySignature: response.razorpay_signature,
-            };
-
-            const result = await axios.post("http://localhost:5000/payment/success", data);
-
-            alert(result.data.msg);
-        },
-        prefill: {
-            name: "Soumya Dey",
-            email: "SoumyaDey@example.com",
-            contact: "9999999999",
-        },
-        notes: {
-            address: "Soumya Dey Corporate Office",
-        },
-        theme: {
-            color: "#61dafb",
-        },
-    };
-
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  }
+		const options = {
+			key: 'rzp_test_PUcAy73J8TzAuO',
+			currency: data.currency,
+			amount: data.amount.toString(),
+			order_id: data.id,
+			name: 'Donation',
+			description: 'Thank you for nothing. Please give us some money',
+			image: './images/logo_donated.gif',
+			handler: function (response) {
+				alert(response.razorpay_payment_id)
+				alert(response.razorpay_order_id)
+				alert(response.razorpay_signature)
+			},
+			prefill: {
+				name,
+				email: 'sdfdsjfh2@ndsfdf.com',
+				phone_number: '9899999999'
+			}
+		}
+		const paymentObject = new window.Razorpay(options)
+		paymentObject.open()
+	}
 
 
   return (
@@ -87,11 +72,11 @@ const Donations = (props) => {
           those killed or injured in natural calamities.
         </p>
         <Button>
-          <a href="/donation">
-            <button class="button-56" role="button">
+          {/* <a href="/donation"> */}
+            <button class="button-56" role="button" onClick={displayRazorpay}>
               Donate Now
             </button>
-          </a>
+          {/* </a> */}
         </Button>
       </About>
       <Image>
@@ -157,7 +142,7 @@ const Donations = (props) => {
       <body class="form-v10">
 	<div class="page-content">
 		<div class="form-v10-content">
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" method="post" id="myform">
 				<div class="form-left">
 					<h2>General Infomation</h2>
 					<div class="form-row">
@@ -263,7 +248,7 @@ const Donations = (props) => {
 						</label>
 					</div>
 					<div class="form-row-last">
-						<input type="submit" name="register" class="register" value="Register Badge" onClick={displayRazopay}/>
+						<input type="submit" name="register" class="register" value="Register Badge" onClick={displayRazorpay}/>
 					</div>
 				</div>
 			</form>
