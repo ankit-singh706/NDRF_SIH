@@ -21,6 +21,7 @@ const Modal = ({ handleClose, show, children }) => {
                             alt='back'
                             width='35px'
                             className='back'
+                            onClick={handleClose}
                         />
                         <h1 className='modal-heading'>
                             Village of Khurda drowned in flood
