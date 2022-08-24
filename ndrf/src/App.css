@@ -19,17 +19,29 @@ section {
 }
 
 .filter-item {
-    width: fit-content;
-    height: 35px;
+    max-width: 310px;
+    height: auto;
     border-right: 3px solid #000;
     display: flex;
     align-items: center;
-    padding: 10px 40px;
+    padding: 10px 20px;
     gap: 10px;
     justify-content: center;
 }
 .filter-item:nth-last-of-type(1) {
     border-right: none;
+}
+
+.filter-item-title{
+    color: black;
+}
+
+.react-select .react-select__control--is-focused .react-select__control--menu-is-open{
+
+        border-color: red;
+        box-shadow:  0 0 10px pink;
+        width: 1000px;
+      
 }
 .filter-icon {
     width: 12px;
@@ -131,4 +143,30 @@ section {
 }
 .update {
     margin-bottom: 15px;
+}
+
+
+/* CSS for ImageSlider */
+.display{
+    border: 1px transparent white;
+    background-color: #EEE7DD;
+    border-radius: 20px;
+    color: #000;
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+}
+
+.display-para{
+    color: #000;
+}
+
+.carousel-control-next-icon{
+    background-color: #5C5B5B;
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon{
+    background-color: #5C5B5B;
+    border-radius: 10px;
 }

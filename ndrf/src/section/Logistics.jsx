@@ -199,36 +199,4 @@ const TBarText = styled.div`
     }
 `
 
-const TrackingBar0 = styled.div`
-    position: relative;
-    display: inline-flex;
-    width: 190px;
-    left: 45px;
-    height: 190px;
-    border-left: 2px solid #000000;
-
-    .content {
-        position: absolute;
-        font-size: 12px;
-        padding: 23px 22px;
-    }
-`
-
-const TrackingBar1 = styled.div`
-    position: relative;
-    display: inline-flex;
-    width: 100px;
-    /* top: 0; */
-    left: 75px;
-    height: 190px;
-    border-left: 2px solid #000000;
-
-    .content {
-        position: relative;
-        display: inline-block;
-        font-size: 12px;
-        padding: 23px 22px;
-    }
-`
-
 export default Logistics

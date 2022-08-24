@@ -26,6 +26,8 @@ const Incidents = () => {
         { value : 'flood',label:'Flood'}
     ];
 
+    
+
     const customTheme = (theme) =>{
         return{
             ...theme,
@@ -36,6 +38,36 @@ const Incidents = () => {
             }
         }
     }
+
+    const colourStyles = {
+        control: (base, state) => ({
+            ...base,
+            background: "#fff",
+            borderRadius: "8px 8px 8px 8px",
+            borderColor: state.isFocused ? "black" : "darkblue",
+            boxShadow: state.isFocused ? "2px 2px #00dce6" : "1px 1px #00dce6",
+            "&:hover": {
+              borderColor: state.isFocused ? "black" : "black"
+            }
+          }),
+          menu: (base) => ({
+            ...base,
+            borderRadius: "15px",
+            marginTop: "3px"
+          }),
+          menuList: (base) => ({
+            ...base,
+            padding: 0,
+            borderRadius: "15px"
+          }),
+        option: (styles, { isDisabled }) => {
+          return {
+            ...styles,
+            color: "black",
+            cursor: isDisabled ? "not-allowed" : "default"
+          };
+        }
+      };
     return (
         <>
             <div className='topmargin'></div>
@@ -48,7 +80,7 @@ const Incidents = () => {
                 <Select
                     components={makeAnimated()}
                     theme={customTheme}
-                    className='filter-item-title'
+                    styles={colourStyles}
                     onChange={setType}
                     options={optionTypes}
                     placeholder="Select disaster type"
@@ -56,7 +88,6 @@ const Incidents = () => {
                     isSearchable
                     isMulti
                     autoFocus
-                    
                 />
                     {/* <div className='filter-item-title'>Type</div> */}
                     
@@ -67,6 +98,7 @@ const Incidents = () => {
                     <img className='filter-icon' src={down}></img> */}
                     <Select 
                     components={makeAnimated()}
+                    styles={colourStyles}
                     noOptionsMessage={()=> 'This is not a status'}  
                     isMulti
                     autoFocus
@@ -80,8 +112,22 @@ const Incidents = () => {
                 />
                 </div>
                 <div className='filter-item'>
-                    <div className='filter-item-title'>Data</div>
-                    <img className='filter-icon' src={down}></img>
+                    {/* <div className='filter-item-title'>Data</div>
+                    <img className='filter-icon' src={down}></img> */}
+                    <Select 
+                    components={makeAnimated()}
+                    styles={colourStyles}
+                    noOptionsMessage={()=> 'This is not a status'}  
+                    isMulti
+                    autoFocus
+                    theme={customTheme}
+                    className='filter-item-title'
+                    onChange={setStatus}
+                    options={optionStatus}
+                    placeholder="Select status type"
+                    isSearchable
+                    
+                />
                 </div>
             </section>
             <div>
