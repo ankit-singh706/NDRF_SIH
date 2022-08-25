@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import Chloropeth from "../section/Chloropeth";
 
 const Statistics = (props) =>{
     return(
         <>
         <Heading><h1>STATISTICS</h1></Heading>
         <Container>
-            <Map></Map>
+            <Map>
+                <Chloropeth/>
+            </Map>
             <Stats><p>Hello</p></Stats>
         </Container>
         </>
@@ -24,16 +27,21 @@ const Container = styled.div`
 
 const Heading = styled.div`
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
+    
+    h1{
+        font-size: 2.3rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        /* letter-spacing: 2px; */
+    }
 `
 
 const Map = styled.div`
-    border: 1px solid red;
-    border-radius: 20px;
     width: 65%;
     height: 85vh;
     padding:12px 12px;
+    z-index:0;
+    
 `
 
 const Stats = styled.div`

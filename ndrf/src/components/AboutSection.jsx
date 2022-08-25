@@ -19,11 +19,14 @@ const Container = styled.div`
     border-radius: 20px;
     width: 100%;
     height: 100vh;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position:relative;
     display: flex;
     align-items: center;
     padding: 16px 16px;
+    margin-top: 20px;
+    overflow: hidden;
+    /* background-color: yellow; */
     
 `
 
@@ -36,6 +39,7 @@ const TextArea = styled.div`
     align-content: center;
     height: auto;
     width: 60%;
+    overflow: hidden;
 
     h5{
         font-size: 2rem;
@@ -48,7 +52,7 @@ const TextArea = styled.div`
         font-size: 1rem;
         text-align: center;
         font-family: "Noto Sans", sans-serif;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 24px;
         color: grey;
     }
