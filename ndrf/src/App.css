@@ -297,3 +297,7 @@ section {
     background-color: #5c5b5b;
     border-radius: 10px;
 }
+
+.b-padding {
+    height: 20px;
+}
