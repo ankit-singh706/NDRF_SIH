@@ -1,6 +1,44 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Doughnut } from 'react-chartjs-2'
+
+ChartJS.register(ArcElement, Tooltip, Legend)
+
+export const data = {
+    labels: [
+        'Gratuitous Relief',
+        'Agriculture',
+        'Animal Husbandry',
+        'fishery',
+        'handicrafts/Handloom',
+        'Housing',
+    ],
+    datasets: [
+        {
+            label: '# of Votes',
+            data: [679960, 137100, 80000, 26600, 10200, 211600],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+        },
+    ],
+}
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -129,10 +167,7 @@ const Donations = (props) => {
             </Heading>
             <DonationStats>
                 <Graph>
-                    <p></p>
-                </Graph>
-                <Graph>
-                    <p></p>
+                    <Doughnut data={data} />
                 </Graph>
             </DonationStats>
             <Floater>
@@ -151,51 +186,63 @@ const Donations = (props) => {
             </Heading>
             <DonationReason>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className="icon"></div>
-                    <div className="line"></div>
-                    <div className="text">
+                    <div className='icon'></div>
+                    <div className='line'></div>
+                    <div className='text'>
                         <h2>Tracebility</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
                     </div>
                 </Wrap>
             </DonationReason>
@@ -646,7 +693,7 @@ const Card = styled.div`
 
 const Heading = styled.div`
     margin-top: 80px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
     text-align: center;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -658,22 +705,24 @@ const Heading = styled.div`
     }
 `
 const DonationStats = styled.div`
-    height: 80vh;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
+    align-self: center;
+    justify-content: center;
     gap: 2rem;
     padding: 23px 12px;
 `
 
 const Graph = styled.div`
-    height: inherit;
-    width: 50%;
+    // height: ;
+    width: 32%;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 23px;
-    background: #d9d9d9;
+    // background: #d9d9d9;
 `
 const Floater = styled.div`
     position: relative;
@@ -727,7 +776,7 @@ const DonationReason = styled.div`
 `
 
 const Wrap = styled.div`
-    padding:40px 25px;
+    padding: 40px 25px;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
         rgb(0 0 0/ 73%) 0px 16px 10px -10px;
@@ -741,7 +790,7 @@ const Wrap = styled.div`
     /* border: 1px solid black; */
     background-color: #dadada;
 
-    .icon{    
+    .icon {
         border: 1px solid black;
         height: 100px !important;
         width: 115px !important;
@@ -755,28 +804,27 @@ const Wrap = styled.div`
         /* left: 100px; */
     }
 
-    .line{
-        border-right:2.5px solid black;
+    .line {
+        border-right: 2.5px solid black;
         height: 100px;
         padding: 2px 10px;
     }
 
-    .text{
+    .text {
         padding: 2px 10px;
 
-        h2{
+        h2 {
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 30px;
-            font-family: "Noto Sans", sans-serif;
+            font-family: 'Noto Sans', sans-serif;
         }
 
-        p{
-            font-family: "Poppins", sans-serif;
+        p {
+            font-family: 'Poppins', sans-serif;
             font-weight: 500;
         }
     }
-
 
     &:hover {
         box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
