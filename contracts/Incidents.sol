@@ -32,21 +32,21 @@ contract Incidents{
     
     // Dependency
     SupplyChain supplyChain;
-    // User user;
+    User user;
     
     // Events
     event CreatedIncident(IncidentInfo incidentInfo);
     event CreatedSupplyChain(SupplyChain supplyChain);
 
-    // modifier onlyAuthorized(address _user,uint _rank) {
-    //     require(user.getRank(_user)!=0,"Only ranked officials can access this method");
-    //     require(user.getRank(_user) >= _rank, "Not Authorized");
-    //     _;
-    // }
+    modifier onlyAuthorized(address _user,uint _rank) {
+        require(user.getRank(_user)!=0,"Only ranked officials can access this method");
+        require(user.getRank(_user) >= _rank, "Not Authorized");
+        _;
+    }
 
-    constructor(SupplyChain _supplyChain) {
+    constructor(SupplyChain _supplyChain, User _user) {
         supplyChain = _supplyChain;
-        // user = _user;
+        user = _user;
         // emit CreatedSupplyChain(supplyChain);
     }
 
@@ -64,11 +64,11 @@ contract Incidents{
         return statusOfIncidentWithID[_id];
     }
 
-    function addStageToSupplyChain(uint _incidentID, SupplyChain.Stage memory _stage) public {
+    function addStageToSupplyChain(uint _incidentID, SupplyChain.Stage memory _stage, address _user) public onlyAuthorized(_user, 3) {
         supplyChain.addStage(_incidentID,_stage);
     } 
 
-    function verifySupplyChainStage(uint _incidentID) public {
+    function verifySupplyChainStage(uint _incidentID, address _user) public onlyAuthorized(_user,4) {
         supplyChain.verifyStage(_incidentID);
     }
 
