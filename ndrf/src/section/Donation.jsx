@@ -151,37 +151,52 @@ const Donations = (props) => {
             </Heading>
             <DonationReason>
                 <Wrap>
-                    <h2>Tracebility</h2>
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
                 <Wrap>
-                    <img
-                        src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80'
-                        alt=''
-                    />
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
                 <Wrap>
-                    <img
-                        src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80'
-                        alt=''
-                    />
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
                 <Wrap>
-                    <img
-                        src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80'
-                        alt=''
-                    />
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
                 <Wrap>
-                    <img
-                        src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80'
-                        alt=''
-                    />
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
                 <Wrap>
-                    <img
-                        src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80'
-                        alt=''
-                    />
+                    <div className="icon"></div>
+                    <div className="line"></div>
+                    <div className="text">
+                        <h2>Tracebility</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
                 </Wrap>
             </DonationReason>
             <Heading>
@@ -712,28 +727,56 @@ const DonationReason = styled.div`
 `
 
 const Wrap = styled.div`
-    padding-top: 46.25%;
+    padding:40px 25px;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
         rgb(0 0 0/ 73%) 0px 16px 10px -10px;
     cursor: pointer;
-    overflow: hidden;
-    position: relative;
+    /* overflow: hidden; */
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 3px solid rgba(249, 249, 249, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    background-color: #dadada;
 
-    img {
+    .icon{    
+        border: 1px solid black;
+        height: 100px !important;
+        width: 115px !important;
         inset: 0px;
         display: block;
-        height: 100%;
         object-fit: cover;
         opacity: 1;
-        position: absolute;
-        transition: opacity 500ms ease-in-out 0s;
-        width: 100%;
+        /* transition: opacity 500ms ease-in-out 0s; */
         z-index: 1;
-        top: 0;
+        top: 70px;
+        /* left: 100px; */
     }
+
+    .line{
+        border-right:2.5px solid black;
+        height: 100px;
+        padding: 2px 10px;
+    }
+
+    .text{
+        padding: 2px 10px;
+
+        h2{
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 30px;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+    }
+
 
     &:hover {
         box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
