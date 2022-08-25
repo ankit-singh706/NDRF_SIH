@@ -35,7 +35,8 @@ const Map = ()=>{
 
     const printState= (e =>{
         setOnselect({});
-        console.log(e.target.feature.properties.st_nm);
+        const state = e.target.feature.properties.st_nm;
+        alert(state);
         // e.target.setStyle(style(e.target.feature));
     })
 
@@ -52,21 +53,19 @@ const Map = ()=>{
     }
 
     const mapPolygonColorToDensity=(density => {
-        return density > 3023
+        return density > 1000000
             ? '#a50f15'
-            : density > 676
+            : density > 100000
             ? '#de2d26'
-            : density > 428
+            : density > 10000
             ? '#fb6a4a'
-            : density > 236
+            : density > 1000
             ? '#fc9272'
-            : density > 23
-            ? '#fcbba1'
-            : '#fee5d9';
+            : '#fcbba1';
     })
     const style = (feature => {
         return ({
-            fillColor: mapPolygonColorToDensity(feature.properties.People_Affected),    //Populate with people affected
+            fillColor: mapPolygonColorToDensity(feature.properties.people_affected),    //Populate with people affected
             weight: 1,
             opacity: 1,
             color: 'white',
