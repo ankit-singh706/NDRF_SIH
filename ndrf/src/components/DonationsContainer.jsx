@@ -14,7 +14,7 @@ const DonationsContainer = (props) =>{
                 <CCarouselItem>
                     <Cover><CImage  className="d-block w-100 rad" src="/images/image1_slide.jpg" alt="slide 1" /></Cover>
                     <CCarouselCaption className="d-none d-md-block">
-                    <h5 className="display">Cyclone ‘Nivar’ likely to become 'very severe'</h5>
+                    <h5 className="display">Cyclone 'Nivar' likely to become 'very severe'</h5>
                     {/* <p className="display-para">Some representative placeholder content for the first slide.</p> */}
                     </CCarouselCaption>
                 </CCarouselItem>
@@ -68,7 +68,7 @@ const DonationsContainer = (props) =>{
                     </div>
                     <div className="detail">
                         <div className="name"><p>Ankit</p></div>
-                        <div className="secretkey"><span>1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD</span></div>
+                        <div className="secretkey"><span>0xeA253Aba919582Bc86C6A9ff2276d2B38a896e71</span></div>
                     </div>
                     <div className="donation-detail"><p>Donated $50</p></div>
                 </div>
@@ -147,7 +147,7 @@ const Cover = styled.div`
         height: 55vh;
         width: 100vw;
         object-fit: cover;
-        border-radius: 40px;
+        border-radius: 15px;
     }
 `
 

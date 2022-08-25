@@ -65,8 +65,8 @@ const Donations = (props) => {
     return (
         <>
             <About>
-                <div className='heading'>Charity is an Act of </div>
-                <div className='heading-org'>A Soft Heart</div>
+                <div className='heading'>Charity is an Act of</div>
+                <div className='heading-org'>Soft Heart</div>
                 <p>
                     These donations are utilized to render immediate relief to
                     families of those killed or injured in natural calamities.
@@ -449,7 +449,7 @@ const Donations = (props) => {
 const About = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     position: absolute;
     margin-top: 100px;
@@ -464,7 +464,7 @@ const About = styled.div`
     color: #2d2828;
 
     .heading {
-        text-align: center;
+        text-align: left;
         font-weight: 700;
         font-size: 72px;
     }
@@ -476,8 +476,9 @@ const About = styled.div`
 
     p {
         margin-top: 25px;
+        margin-bottom: 20px;
         position: relative;
-        text-align: center;
+        text-align: left;
         width: 460px;
         height: auto;
         font-family: 'Noto Sans', sans-serif;
@@ -490,7 +491,7 @@ const About = styled.div`
 
 const Button = styled.div`
     .button-56 {
-        margin-top: 30px;
+        margin-top: 20px;
         align-items: center;
         background-color: #fdc04d;
         border: 2px solid #111;
@@ -663,7 +664,7 @@ const Floater = styled.div`
     position: relative;
     display: flex;
     width: 90%;
-    height: 121px;
+    height: 100px;
     margin: auto;
     margin-top: 40px;
     background: #d9d9d9;
@@ -673,7 +674,7 @@ const Floater = styled.div`
     h2 {
         position: relative;
         display: inline-flex;
-        font-size: 2rem;
+        font-size: 1.5rem;
         left: 90px;
         top: 20px;
         font-family: 'Poppins', sans-serif;
@@ -684,16 +685,15 @@ const Floater = styled.div`
         position: absolute;
         display: inline-flex;
         left: 90px;
-        top: 60px;
+        top: 50px;
         padding-top: 3px;
         font-family: 'Noto Sans', sans-serif;
-        font-weight: 800;
+        font-weight: 300;
     }
 
     Button {
         /* position: relative; */
         left: 600px;
-        top: 5px;
     }
 `
 
