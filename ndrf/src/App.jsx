@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Incidents from './section/Incidents';
 import { Dropdown } from 'bootstrap'
 import Chloropeth from './section/Chloropeth'
+import State from './section/State'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/logistics' element={<Logistics/>}></Route>
           <Route path='/incidents' element={<Incidents />}></Route>
           <Route path='/drop' element={<Dropdown/>}></Route>
+          <Route path='/state' element={<State/>}></Route>
         </Routes>
         <Footer/>
       </Router>

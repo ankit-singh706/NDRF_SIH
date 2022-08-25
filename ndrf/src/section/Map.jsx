@@ -20,22 +20,34 @@ const Map = ()=>{
             density: People_Affected
         });
         layer.setStyle({
+            width: '100px',
             weight: 1,
-            color: "black",
+            color: "blue",
             fillOpacity: 1
         });
     });
     /*resets our state i.e no properties should be displayed when a feature is not clicked or hovered over */
     const resetHighlight= (e =>{
         setOnselect({});
+        // console.log(e.target.feature.properties.st_nm);
         e.target.setStyle(style(e.target.feature));
     })
+
+    const printState= (e =>{
+        setOnselect({});
+        console.log(e.target.feature.properties.st_nm);
+        // e.target.setStyle(style(e.target.feature));
+    })
+
+
     /* this function is called when a feature in the map is hovered over or when a mouse moves out of it, the function calls two functions
      highlightFeature and resetHighlight*/
     const onEachFeature= (feature, layer)=> {
+        // onclick(console.log(feature))
         layer.on({
+            click: printState,
             mouseover: highlightFeature,
-            mouseout: resetHighlight,
+
         });
     }
 
