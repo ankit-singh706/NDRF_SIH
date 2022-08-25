@@ -1,11 +1,31 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import AboutSection from '../components/AboutSection';
 import DonationsContainer from '../components/DonationsContainer';
 import Statistics from '../components/Statistics';
-
+import httpClient from '../helpers/httpClient';
 
 const Homepage = (props) =>{
+
+    const [podList,setPodList] = useState();
+
+    const getPodList = async () => {
+        await httpClient({
+        url: '/people',
+        method: "get",
+    }).then((response) => {
+        var templist = response.data
+        console.log(templist)
+        setPodList(templist)
+    }).catch((error) => {
+        console.log(error);
+    });
+    }
+    useEffect(() => {
+    getPodList();
+ 
+
+}, [])
     return(
         <Container>
             <DonationsContainer/>
