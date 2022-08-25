@@ -3,7 +3,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 import './Incidents.sol';
 import './User.sol';
-import './SupplyChain.sol';
+
 
 contract Disaster {
     struct DisasterInfo {
@@ -25,23 +25,18 @@ contract Disaster {
     DisasterStats disasterStats;
 
     Incidents incidents;
-    // User user;
+    User user;
+
 
     event DisasterCreated(DisasterInfo disasterInfo, address incidents);
     event IncidentCreated(Incidents.IncidentInfo incidentInfo);
     
-    constructor(DisasterInfo memory _disasterInfo, Incidents _incidents) {
-        // user = _user;
+    constructor(DisasterInfo memory _disasterInfo, Incidents _incidents, User _user) {
+        user = _user;
         incidents = _incidents;
         disasterInfo = _disasterInfo;
         // emit DisasterCreated(disasterInfo,address(incidents));
     }
-
-    // modifier onlyAuthorized(address _user,uint _rank) {
-    //     require(user.getRank(_user)!=0,"Only ranked officials can access this method");
-    //     require(user.getRank(_user) >= _rank, "Not Authorized");
-    //     _;
-    // }
 
     function getDisasterInfo() public view returns (DisasterInfo memory){
         return disasterInfo;

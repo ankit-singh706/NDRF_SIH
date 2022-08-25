@@ -2,10 +2,13 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 import './Disaster.sol';
-import './SupplyChain.sol';
 import './Incidents.sol';
+import './SupplyChain.sol';
 
 contract User{
+
+    address owner;
+
     struct UserInfo {
         address publicAddress;
         string name;
@@ -17,17 +20,26 @@ contract User{
     mapping (address=>UserInfo) userWithAddressOf;
     mapping (address=>uint) rankWithAddressOf;
 
-    Disaster[] disasters;
-    mapping(uint => Disaster) disasterWithID;
+    address[] disasters;
+    mapping (uint=>address) disasterWithID;
 
-    event CreatedDisaster (address Disaster, address Incidents, address SupplyChain);
+    event DisasterCreated(address by, address disaster, address insidents, address supplyChain);
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     modifier onlyAuthorized(address _user,uint _rank) {
         require(getRank(_user)!=0,"Only ranked officials can access this method");
         require(getRank(_user) >= _rank, "Not Authorized");
         _;
     }
-    
+
+    modifier onlyOwner() {
+        require(msg.sender==owner,"Only accessible by the owner of this contract");
+        _;
+    }
+
     function getUser(address _user) public view returns (UserInfo memory){
         return userWithAddressOf[_user];
     }
@@ -36,23 +48,20 @@ contract User{
         return rankWithAddressOf[_user];
     }
 
-    function createUser(UserInfo memory _user) public  {
+    function createUser(UserInfo memory _user) public onlyOwner {
         users.push(_user);
         userWithAddressOf[_user.publicAddress] = _user;
         rankWithAddressOf[_user.publicAddress] = _user.rank;
     }
 
-    function createDisaster(Disaster.DisasterInfo memory _disasterInfo) public {
+    function createDisaster(Disaster.DisasterInfo memory _disasterInfo) public onlyAuthorized(msg.sender,4){
         SupplyChain supplyChain = new SupplyChain();
-        Incidents incidents = new Incidents(supplyChain);
-        Disaster disaster = new Disaster(_disasterInfo,incidents);
-        disasters.push(disaster);
-        disasterWithID[_disasterInfo.id] = disaster;
-        emit CreatedDisaster(address(disaster),address(incidents),address(supplyChain));
+        Incidents incidents = new Incidents(supplyChain,this);
+        Disaster disaster = new Disaster(_disasterInfo,incidents,this);
+        disasters.push(address(disaster));
+        disasterWithID[_disasterInfo.id] = address(disaster); 
+        emit DisasterCreated(address(msg.sender),address(disaster),address(incidents),address(supplyChain));
     }
 
-    function getDisasterByID(uint _id) public view returns(Disaster) {
-        return disasterWithID[_id];
-    }
 
 }
