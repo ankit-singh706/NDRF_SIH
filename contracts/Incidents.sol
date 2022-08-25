@@ -88,4 +88,7 @@ contract Incidents{
         return supplyChain.getStageByStageID(_stageID);
     }
 
+    function getSupplyChainContract() public view returns(SupplyChain) {
+        return supplyChain;
+    }
 }
