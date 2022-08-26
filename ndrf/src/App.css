@@ -49,7 +49,6 @@ section {
 }
 .card-container {
     margin: 30px 70px 30px 70px;
-    overflow-x: hidden;
     height: auto;
 }
 .item {
