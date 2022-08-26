@@ -78,7 +78,7 @@ const NavBar = (props) => {
                 <a href='/donation'>DONATION</a>
                 <a href='/logistics'>LOGISTICS</a>
                 <a href='https://thegreatfellow.github.io/disaster-sentiment-analysis/mood_python.html'>
-                    Social Data
+                    SOCIAL DATA
                 </a>
             </NavMenu>
             <Wallet>

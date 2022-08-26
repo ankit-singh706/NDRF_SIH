@@ -38,7 +38,7 @@ const Map = ()=>{
     const printState= (e =>{
         navigate('/state');
         setOnselect({});
-        const state = e.target.feature.properties.st_nm;
+        // const state = e.target.feature.properties.st_nm;
         // e.target.setStyle(style(e.target.feature));
     })
 
