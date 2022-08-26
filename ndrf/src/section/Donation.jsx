@@ -83,17 +83,17 @@ const Donations = (props) => {
             amount: data.amount.toString(),
             order_id: data.id,
             name: 'Donation',
-            description: 'Thank you for nothing. Please give us some money',
-            image: './images/logo_donated.gif',
+            description: 'Enter the amount to donate',
+            image: './images/people_donated.gif',
             handler: function (response) {
-                alert(response.razorpay_payment_id)
-                alert(response.razorpay_order_id)
-                alert(response.razorpay_signature)
+                console.log(response.razorpay_payment_id)
+                console.log(response.razorpay_order_id)
+                console.log(response.razorpay_signature)
             },
             prefill: {
                 name,
-                email: 'sdfdsjfh2@ndsfdf.com',
-                phone_number: '9899999999',
+                email: '',
+                phone_number: 'Enter your phone number',
             },
         }
         const paymentObject = new window.Razorpay(options)
@@ -174,8 +174,8 @@ const Donations = (props) => {
                 <h2>Help Disaster Victims</h2>
                 <p>Rs 500 can feed a family for a week </p>
                 <Button>
-                    <a href='/donation'>
-                        <button class='button-56' role='button'>
+                    <a>
+                        <button class='button-56' role='button' onClick={displayRazorpay}>
                             Donate Now
                         </button>
                     </a>
