@@ -51,7 +51,7 @@ const UploadPage = () => {
         <>
             <div className='topmargin'></div>
             <header>
-                <h1>IPFS Upload Portal</h1>
+                <h1 className=''>IPFS Upload Portal</h1>
             </header>
             <form id='upload-form' onSubmit={handleSubmit}>
                 <label htmlFor='filepicker'>Pick files to store</label>
