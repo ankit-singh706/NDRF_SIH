@@ -79,7 +79,10 @@ const Modal = ({ handleClose, show, children }) => {
                             Food/Water(In Kg/Units):
                         </textarea>
                     </div>
-                    <div className='button-section'>Start Instance</div>
+
+                    <div className='button-section'>
+                        <a href='/logistics'>Start Instance</a>
+                    </div>
                 </div>
             </section>
         </div>

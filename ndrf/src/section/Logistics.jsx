@@ -67,36 +67,6 @@ const Logistics = (props) => {
                             Crossing Odisha Border near Jamsola
                         </p>
                     </div>
-                    <div className='update'>
-                        <p className='time'>3:72 PM</p>
-                        <p className='update-content'>
-                            Crossing Odisha Border near Jamsola
-                        </p>
-                    </div>
-                    <div className='update'>
-                        <p className='time'>3:72 PM</p>
-                        <p className='update-content'>
-                            Crossing Odisha Border near Jamsola
-                        </p>
-                    </div>
-                    <div className='update'>
-                        <p className='time'>3:72 PM</p>
-                        <p className='update-content'>
-                            Crossing Odisha Border near Jamsola
-                        </p>
-                    </div>
-                    <div className='update'>
-                        <p className='time'>3:72 PM</p>
-                        <p className='update-content'>
-                            Crossing Odisha Border near Jamsola
-                        </p>
-                    </div>
-                    <div className='update'>
-                        <p className='time'>3:72 PM</p>
-                        <p className='update-content'>
-                            Crossing Odisha Border near Jamsola
-                        </p>
-                    </div>
                 </div>
                 <div className='contentC'>
                     <div className='update'>
