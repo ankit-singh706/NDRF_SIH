@@ -1,26 +1,53 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import httpClient from '../helpers/httpClient';
+import axios from 'axios';
 
 const State = (props) =>{
+
+
+    
+    const [disasterList, setDisasterList] = useState([])
+    const getPodList = async () => {
+        await httpClient({
+            url: '/disasters',
+            method: 'get',
+        })
+            .then((response) => {
+                var templist = response.data
+                console.log(templist[0].Period)
+                setDisasterList(templist)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+    useEffect(() => {
+        getPodList()
+    }, [])
+
+    const navigate = useNavigate();
     return(
         <>
             <Heading>
                 {/* state is dynamic here */}
                 <h2>State Disaster Information</h2>
             </Heading>
-            <Data>
-                <div className="info">
-                    <div className="date">23/06/2022</div>
-                    <div className="disaster"><a href="/">India: Lightning</a></div>
+            {disasterList.map((disaster,index)=>{
+                return(
+                    <Data>
+                <div className="info" key={index}>
+                    <div className="date">{disaster.Period}</div>
+                    
+                    <div className="disaster"><a onClick={()=>{navigate('/disaster',{state:disaster})}}>{disaster.Event_type}</a></div>
                 </div>
                 <hr/>
             </Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
-            <Data><div className="info"><div className="date">23/06/2022</div><div className="disaster"><a href="/">India: Lightning</a></div></div><hr/></Data>
+                )
+                
+            })}
+        
         </>
     )
 }
@@ -49,15 +76,17 @@ const Data = styled.div`
     .info{
         display: flex;
         flex-direction: row;  
-        justify-content:space-around;
-        gap: 200px;
         padding:10px 130px;
         font-family: "Noto Sans", sans-serif;
+        justify-content: space-between;
+        margin:0 50px;
     }
 
     .date,.disaster{
         font-size: 1.1rem;
         font-weight: 600;
+        text-align: left;
+
     }
 
     .disaster a{
