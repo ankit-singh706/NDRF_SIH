@@ -30,7 +30,8 @@ contract Disaster {
 
     event DisasterCreated(DisasterInfo disasterInfo, address incidents);
     event IncidentCreated(Incidents.IncidentInfo incidentInfo);
-    
+    event DisasterInformation(uint id,uint timestamp,string name,string description,string disasterType,uint severity,string location);
+
     constructor(DisasterInfo memory _disasterInfo, Incidents _incidents, User _user) {
         user = _user;
         incidents = _incidents;
@@ -38,10 +39,10 @@ contract Disaster {
         // emit DisasterCreated(disasterInfo,address(incidents));
     }
 
-    function getDisasterInfo() public view returns (DisasterInfo memory){
+    function getDisasterInfo() public returns (DisasterInfo memory){
+        emit DisasterInformation(disasterInfo.id,disasterInfo.timestamp,disasterInfo.name,disasterInfo.description,disasterInfo.disasterType,disasterInfo.severity, disasterInfo.location);
         return disasterInfo;
     }
-
 
     function createIncident(Incidents.IncidentInfo memory _incidentInfo) public {
         incidents.createIncident(_incidentInfo);

@@ -24,6 +24,7 @@ contract User{
     mapping (uint=>address) disasterWithID;
 
     event DisasterCreated(address by, address disaster, address insidents, address supplyChain);
+    event DisasterInformation(uint id, uint timestamp, string name, string description, string disasterType, uint severity, string location);
 
     constructor() {
         owner = msg.sender;
@@ -63,5 +64,12 @@ contract User{
         emit DisasterCreated(address(msg.sender),address(disaster),address(incidents),address(supplyChain));
     }
 
+    function getDisasters() public view returns (address[] memory){
+        return disasters;
+    }
+
+    function getDisasterByID(uint _id) public view returns(address) {
+        return disasterWithID[_id];
+    }
 
 }
