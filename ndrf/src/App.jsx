@@ -10,6 +10,7 @@ import { Dropdown } from 'bootstrap'
 import Chloropeth from './section/Chloropeth'
 import State from './section/State'
 import Disaster from './section/Disaster'
+import UploadPage from './section/UploadPage'
 function App() {
     return (
         <div className='App'>
@@ -25,6 +26,7 @@ function App() {
                     <Route path='/drop' element={<Dropdown />}></Route>
                     <Route path='/disaster' element={<Disaster />}></Route>
                     <Route path='/state' element={<State />}></Route>
+                    <Route path='/upload' element={<UploadPage />}></Route>
                 </Routes>
                 <Footer />
             </Router>
