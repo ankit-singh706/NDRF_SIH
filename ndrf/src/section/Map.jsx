@@ -4,11 +4,13 @@ import '../Map.css';
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {features} from '../data/Indian_States';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const Map = ()=>{
+    const navigate = useNavigate();
     const [onselect, setOnselect] = useState({});
     /* function determining what should happen onmouseover, this function updates our state*/
     const highlightFeature = (e=> {
@@ -34,9 +36,9 @@ const Map = ()=>{
     })
 
     const printState= (e =>{
+        navigate('/state');
         setOnselect({});
         const state = e.target.feature.properties.st_nm;
-        alert(state);
         // e.target.setStyle(style(e.target.feature));
     })
 

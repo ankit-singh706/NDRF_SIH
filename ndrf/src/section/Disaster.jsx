@@ -373,7 +373,7 @@ const Disaster = () => {
     return (
         <Container>
             {/* state is dynamic here */}
-            <h2 className='heading_disaster'>Gujurat Floods(12 July 2022)</h2>
+            <h2 className='heading_disaster'>Gujurat Disasters(12 July 2022)</h2>
             <StatisticalData>
                 <div className='lives'>
                     <img
@@ -397,7 +397,7 @@ const Disaster = () => {
             <Data>
                 <div className='info'>
                     <div className='date'>
-                        <a href='#'>DMC 2022/08/10</a>
+                        <a href='https://ndmindia.mha.gov.in/NDMINDIA-CMS/viewWhatsNewPdf-D888'>DMC 2022/08/10</a>
                     </div>
                     <div className='disaster'>
                         Situation report regarding Flood/ Heavy rainfall as on
@@ -409,11 +409,10 @@ const Disaster = () => {
             <Data>
                 <div className='info'>
                     <div className='date'>
-                        <a href='#'>DMC 2022/08/10</a>
+                        <a href='https://ndmindia.mha.gov.in/NDMINDIA-CMS/viewsituationDisasterReportPdfDocument-849'>DMC 2022/07/05</a>
                     </div>
                     <div className='disaster'>
-                        Situation report regarding Flood/ Heavy rainfall as on
-                        10 2022 at 1800 Hrs
+                    Situation report regarding Flood/ Heavy rainfall as on 5 July 2022 at 1800 Hrs
                     </div>
                 </div>
                 <hr />
@@ -421,11 +420,10 @@ const Disaster = () => {
             <Data>
                 <div className='info'>
                     <div className='date'>
-                        <a href='#'>DMC 2022/08/10</a>
+                        <a href='https://ndmindia.mha.gov.in/NDMINDIA-CMS/viewsituationDisasterReportPdfDocument-843'>DMC 2022/06/29</a>
                     </div>
                     <div className='disaster'>
-                        Situation report regarding Flood/ Heavy rainfall as on
-                        10 2022 at 1800 Hrs
+                    Situation report regarding Flood/ Heavy rainfall as on 29 June 2022 at 1800 Hrs
                     </div>
                 </div>
                 <hr />
@@ -433,11 +431,10 @@ const Disaster = () => {
             <Data>
                 <div className='info'>
                     <div className='date'>
-                        <a href='#'>DMC 2022/08/10</a>
+                        <a href='https://ndmindia.mha.gov.in/NDMINDIA-CMS/viewsituationDisasterReportPdfDocument-840'>DMC 2022/06/26</a>
                     </div>
                     <div className='disaster'>
-                        Situation report regarding Flood/ Heavy rainfall as on
-                        10 2022 at 1800 Hrs
+                    Situation report regarding Flood/ Heavy rainfall as on 26 June 2022 at 1800 Hrs
                     </div>
                 </div>
                 <hr />
@@ -445,11 +442,10 @@ const Disaster = () => {
             <Data>
                 <div className='info'>
                     <div className='date'>
-                        <a href='#'>DMC 2022/08/10</a>
+                        <a href='https://ndmindia.mha.gov.in/NDMINDIA-CMS/viewsituationDisasterReportPdfDocument-836'>DMC 2022/06/22</a>
                     </div>
                     <div className='disaster'>
-                        Situation report regarding Flood/ Heavy rainfall as on
-                        10 2022 at 1800 Hrs
+                    Situation report regarding Flood/ Heavy rainfall as on 22 June 2022 at 1800 Hrs
                     </div>
                 </div>
                 <hr />
@@ -481,7 +477,7 @@ const Disaster = () => {
                     </CCardBody>
                 </CCard>
                 <CCard style={{ width: '21rem', border: '0px transparent' }}>
-                    <CCardImage orientation='top' src='./images/react.jpg' />
+                    <CCardImage orientation='top' src='./images/react-2.jpg' />
                     <CCardBody>
                         <CCardTitle style={{ fontWeight: 'bold' }}>
                             2022-07-19
@@ -502,10 +498,10 @@ const Disaster = () => {
                     </CCardBody>
                 </CCard>
                 <CCard style={{ width: '21rem', border: '0px transparent' }}>
-                    <CCardImage orientation='top' src='./images/react.jpg' />
+                    <CCardImage orientation='top' src='./images/react_3.jpg' />
                     <CCardBody>
                         <CCardTitle style={{ fontWeight: 'bold' }}>
-                            2022-07-19
+                            2022-07-25
                         </CCardTitle>
                         <CCardText
                             style={{
@@ -514,8 +510,7 @@ const Disaster = () => {
                                 fontWeight: '300',
                             }}
                         >
-                            DETECTED FLOOD WATER IN ANDHRA PRADESH STATE,INDIA.
-                            As observed by ALOS-2 image on 17 July 2022
+                            Flood Map Anand,Gujrat-India As Observed by Sentinel 1 on 22 July,2022
                         </CCardText>
                         <CButton style={{ marginTop: '10px' }} href='#'>
                             Download
@@ -523,10 +518,10 @@ const Disaster = () => {
                     </CCardBody>
                 </CCard>
                 <CCard style={{ width: '21rem', border: '0px transparent' }}>
-                    <CCardImage orientation='top' src='./images/react.jpg' />
+                    <CCardImage orientation='top' src='./images/react_4.jpg' />
                     <CCardBody>
                         <CCardTitle style={{ fontWeight: 'bold' }}>
-                            2022-07-19
+                            2022-07-25
                         </CCardTitle>
                         <CCardText
                             style={{
@@ -535,8 +530,7 @@ const Disaster = () => {
                                 fontWeight: '300',
                             }}
                         >
-                            DETECTED FLOOD WATER IN ANDHRA PRADESH STATE,INDIA.
-                            As observed by ALOS-2 image on 17 July 2022
+                            Flood Map Dholera,Gujrat-India As Observed by Sentinel 1 on 22 July,2022
                         </CCardText>
                         <CButton style={{ marginTop: '10px' }} href='#'>
                             Download
@@ -544,10 +538,10 @@ const Disaster = () => {
                     </CCardBody>
                 </CCard>
                 <CCard style={{ width: '21rem', border: '0px transparent' }}>
-                    <CCardImage orientation='top' src='./images/react.jpg' />
+                    <CCardImage orientation='top' src='./images/react_5.jpg' />
                     <CCardBody>
                         <CCardTitle style={{ fontWeight: 'bold' }}>
-                            2022-07-19
+                            2022-07-25
                         </CCardTitle>
                         <CCardText
                             style={{
@@ -556,8 +550,7 @@ const Disaster = () => {
                                 fontWeight: '300',
                             }}
                         >
-                            DETECTED FLOOD WATER IN ANDHRA PRADESH STATE,INDIA.
-                            As observed by ALOS-2 image on 17 July 2022
+                            Flood Map Dholka,Gujrat-India As Observed by Sentinel 1 on 22 July,2022
                         </CCardText>
                         <CButton style={{ marginTop: '10px' }} href='#'>
                             Download
@@ -565,10 +558,10 @@ const Disaster = () => {
                     </CCardBody>
                 </CCard>
                 <CCard style={{ width: '21rem', border: '0px transparent' }}>
-                    <CCardImage orientation='top' src='./images/react.jpg' />
+                    <CCardImage orientation='top' src='./images/react_6.jpg' />
                     <CCardBody>
                         <CCardTitle style={{ fontWeight: 'bold' }}>
-                            2022-07-19
+                            2022-07-25
                         </CCardTitle>
                         <CCardText
                             style={{
@@ -577,8 +570,7 @@ const Disaster = () => {
                                 fontWeight: '300',
                             }}
                         >
-                            DETECTED FLOOD WATER IN ANDHRA PRADESH STATE,INDIA.
-                            As observed by ALOS-2 image on 17 July 2022
+                            Flood Map Ghorasu,Gujrat-India As Observed by Sentinel 1 on 22 July,2022
                         </CCardText>
                         <CButton style={{ marginTop: '10px' }} href='#'>
                             Download
