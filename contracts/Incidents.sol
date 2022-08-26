@@ -37,6 +37,8 @@ contract Incidents{
     // Events
     event CreatedIncident(IncidentInfo incidentInfo);
     event CreatedSupplyChain(SupplyChain supplyChain);
+    event IncidentInformation(uint id,uint timestamp,string description,string location);
+    event SupplyChainStage(uint id,uint timestamp,string description,string location);
 
     modifier onlyAuthorized(address _user,uint _rank) {
         require(user.getRank(_user)!=0,"Only ranked officials can access this method");
@@ -56,7 +58,8 @@ contract Incidents{
         supplyChain.initializeStage(_incidentInfo.id);
     }
 
-    function getIncident(uint _id) public view returns (IncidentInfo memory) {
+    function getIncident(uint _id) public returns (IncidentInfo memory) {
+        emit IncidentInformation(incidentWithID[_id].id,incidentWithID[_id].timestamp,incidentWithID[_id].description,incidentWithID[_id].location);
         return incidentWithID[_id];
     }
 
@@ -73,7 +76,9 @@ contract Incidents{
     }
 
     function getSupplyChainCurrentStage(uint _incidentID) public returns(SupplyChain.Stage memory) {
-        return supplyChain.getCurrentStage(_incidentID);
+        SupplyChain.Stage memory stage = supplyChain.getCurrentStage(_incidentID);
+        emit SupplyChainStage(stage.id, stage.timestamp, stage.description, stage.location);
+        return stage;
     }
 
     function getStageStatus(uint _incidentID) public returns(bool) {
@@ -84,8 +89,10 @@ contract Incidents{
         return supplyChain.getSupplyChain(_incidentID);
     }
 
-    function getSupplyChainStageByStageID(uint _stageID) public view returns (SupplyChain.Stage memory) {
-        return supplyChain.getStageByStageID(_stageID);
+    function getSupplyChainStageByStageID(uint _stageID) public returns (SupplyChain.Stage memory) {
+        SupplyChain.Stage memory stage = supplyChain.getStageByStageID(_stageID);
+        emit SupplyChainStage(stage.id,stage.timestamp,stage.description,stage.location);
+        return stage;
     }
 
     function getSupplyChainContract() public view returns(SupplyChain) {
