@@ -357,3 +357,9 @@ input[type='submit'] {
 .statss {
     height: 90%;
 }
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
