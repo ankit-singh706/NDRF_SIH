@@ -19,12 +19,12 @@ const Container = styled.div`
     border-radius: 20px;
     width: 100%;
     height: 100vh;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     position:relative;
     display: flex;
     align-items: center;
     padding: 16px 16px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     overflow: hidden;
     /* background-color: yellow; */
     

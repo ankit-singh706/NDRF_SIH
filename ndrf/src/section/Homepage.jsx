@@ -23,9 +23,7 @@ const Homepage = (props) =>{
     }
     useEffect(() => {
     getPodList();
- 
-
-}, [])
+},[])
     return(
         <Container>
             <DonationsContainer/>

@@ -3,9 +3,19 @@ import styled from "styled-components";
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CCarousel,CCarouselCaption,CCarouselItem,CImage } from '@coreui/react';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
 import "../App.css";
 
 const DonationsContainer = (props) =>{
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      };
     return(
         <>
         <Container>
@@ -13,28 +23,42 @@ const DonationsContainer = (props) =>{
             <CCarousel controls indicators>
                 <CCarouselItem>
                     <Cover><CImage  className="d-block w-100 rad" src="/images/image1_slide.jpg" alt="slide 1" /></Cover>
-                    <CCarouselCaption className="d-none d-md-block">
-                    <h5 className="display">Cyclone 'Nivar' likely to become 'very severe'</h5>
-                    {/* <p className="display-para">Some representative placeholder content for the first slide.</p> */}
-                    </CCarouselCaption>
                 </CCarouselItem>
                 <CCarouselItem>
                     <Cover><CImage className="d-block w-100 h-60" src="/images/image2_slide.jpg" alt="slide 2" /></Cover>
-                    <CCarouselCaption className="d-none d-md-block">
-                    <h5 className="display">Cyclone Bulbul disrupts normal life in Bengal, 7 killed</h5>
-                    {/* <p className="display-para">Some representative placeholder content for the first slide.</p> */}
-                    </CCarouselCaption>
                 </CCarouselItem>
                 <CCarouselItem>
                     <Cover><CImage className="d-block w-100" src="/images/image3_slide.jpg" alt="slide 3" /></Cover>
-                    <CCarouselCaption className="d-none d-md-block">
-                    <h5 className="display">Typhoon, cyclone or hurricane? Different names for the same storms</h5>
-                    {/* <p className="display-para">Some representative placeholder content for the first slide.</p> */}
-                    </CCarouselCaption>
+                </CCarouselItem>
+                <CCarouselItem>
+                    <Cover><CImage  className="d-block w-100 rad" src="/images/image4_slide.jpg" alt="slide 1" /></Cover>
+                </CCarouselItem>
+                <CCarouselItem>
+                    <Cover><CImage  className="d-block w-100 rad" src="/images/image5_slide.jpg" alt="slide 1" /></Cover>
+                </CCarouselItem>
+                <CCarouselItem>
+                    <Cover><CImage  className="d-block w-100 rad" src="/images/image6_slide.jpg" alt="slide 1" /></Cover>
+                </CCarouselItem>
+                <CCarouselItem>
+                    <Cover><CImage  className="d-block w-100 rad" src="/images/image7_slide.jpg" alt="slide 1" /></Cover>
+                </CCarouselItem>
+                <CCarouselItem>
+                    <Cover><CImage  className="d-block w-100 rad" src="/images/image8_slide.jpg" alt="slide 1" /></Cover>
                 </CCarouselItem>
             </CCarousel>
             </LiveUpdates>
-            <Unknown></Unknown>
+            <Unknown>
+            <Slider {...settings}>
+            <Wrap><a href="https://amritmahotsav.nic.in/"><img className="heading" src="/images/slider_AmritMahotsav.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://www.youtube.com/channel/UCN2fiHd5IFWtNyu-vpAkeEA/videos"><img className="heading" src="/images/slider_BPR&D.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://digitalindia.gov.in/"><img className="heading" src="/images/slider_digital-india.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://www.incredibleindia.org/content/incredible-india-v2/en.html"><img className="heading" src="/images/slider_incredible-india.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://www.india.gov.in/"><img className="heading" src="/images/slider_indiagov.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://www.makeinindia.com/home"><img className="heading" src="/images/slider_makeinindia.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://www.mygov.in/"><img className="heading" src="/images/slider_mygov.png" alt=""></img></a></Wrap>
+            <Wrap><a href="https://pmnrf.gov.in/en/"><img className="heading" src="/images/slider_pmnrf.png" alt=""></img></a></Wrap>
+        </Slider>
+            </Unknown>
         </Container>
             <Rewards> 
                 <h2>TOP DONATIONS</h2>
@@ -125,6 +149,44 @@ const Container = styled.div`
     display: inline-block;
 `
 
+const Unknown = styled.div`
+    display: inline-block;
+    height: 20vh;
+    border-radius: 10px;
+    width: 100%;
+    
+`
+
+const Wrap = styled.div`
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    height: auto;
+
+    a{
+        border-radius:4px;
+        box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px,rgb(0 0 0/ 73%) 0px 2px 10px -10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 4px;
+
+        &:hover{
+            padding: 0;
+            /* border: 4px solid rgba(249,249,249,0.8); */
+            transition-duration: 300ms;
+        }
+
+        .heading{
+            height: 20vh;
+        }
+    
+    }
+`;
+
+
 const LiveUpdates = styled.div`
     display: inline-block;
     border-radius: 10px;
@@ -132,14 +194,6 @@ const LiveUpdates = styled.div`
     width: 100%;
     margin-bottom: 10px;
 
-`
-
-const Unknown = styled.div`
-    display: inline-block;
-    border: 1px solid green;
-    height: 20vh;
-    border-radius: 10px;
-    width: 100%;
 `
 
 const Cover = styled.div`

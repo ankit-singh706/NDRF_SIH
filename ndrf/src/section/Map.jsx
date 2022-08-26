@@ -21,9 +21,9 @@ const Map = ()=>{
         });
         layer.setStyle({
             width: '100px',
-            weight: 1,
-            color: "blue",
-            fillOpacity: 1
+            weight: 4,
+            color: "white",
+            fillOpacity: 0.8
         });
     });
     /*resets our state i.e no properties should be displayed when a feature is not clicked or hovered over */
@@ -47,7 +47,9 @@ const Map = ()=>{
         // onclick(console.log(feature))
         layer.on({
             click: printState,
+            mousemove: highlightFeature,
             mouseover: highlightFeature,
+            mouseout: resetHighlight
 
         });
     }
@@ -124,32 +126,3 @@ const Map = ()=>{
 }
 export default Map;
 
-
-// const Map = ()=>{
-//     const mapStyle = {
-//         height: '50vh',
-//         width: '100%',
-//         margin: '0 auto',
-//     }
-//     return(
-//          <div className='container'>
-//             <div className="header">
-//             <h2 className='heading'>Kenya Population as Per 2019 National Census Exercise</h2>
-//             <p className="text-muted">A choropleth map displaying Kenya population density as per the national census conducted <br/>in 2019
-//             Each County, details displayed by the map include, total population and number of each gender.</p></div>
-//             <div className="">
-//                 <div className="">
-//                 <MapContainer center={[20.5937, 78.9629]}
-//                 zoom={5} scrollWheelZoom={true} style={mapStyle}>
-//                     <TileLayer
-//                         attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
-//                         url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-//                     />
-//                 </MapContainer>
-//                 </div>
-//             </div>
-//         </div>
-
-//     )
-// }
-// export default Map;
