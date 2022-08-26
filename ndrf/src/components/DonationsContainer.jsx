@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 import {
     CCarousel,
     CCarouselCaption,
@@ -113,6 +114,7 @@ const DonationsContainer = (props) => {
                             </div>
                         )
                     })}
+
                 </div>
             </Rewards>
         </>
@@ -131,20 +133,52 @@ const Container = styled.div`
     display: inline-block;
 `
 
+const Unknown = styled.div`
+    display: inline-block;
+    height: 20vh;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+
+`
+
+const Wrap = styled.div`
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    height: auto;
+
+    a{
+        border-radius:4px;
+        box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px,rgb(0 0 0/ 73%) 0px 2px 10px -10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 4px;
+
+        &:hover{
+            padding: 0;
+            /* border: 4px solid rgba(249,249,249,0.8); */
+            transition-duration: 300ms;
+        }
+
+        .heading{
+            height: 20vh;
+        }
+    
+    }
+`;
+
+
 const LiveUpdates = styled.div`
     display: inline-block;
     border-radius: 10px;
     height: 60vh;
     width: 100%;
     margin-bottom: 10px;
-`
 
-const Unknown = styled.div`
-    display: inline-block;
-    border: 1px solid green;
-    height: 20vh;
-    border-radius: 10px;
-    width: 100%;
 `
 
 const Cover = styled.div`

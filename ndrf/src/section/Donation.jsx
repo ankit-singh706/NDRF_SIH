@@ -127,7 +127,7 @@ const Donations = (props) => {
             <BottomSection>
                 <Card>
                     <div className='box'>
-                        <img src='./images/logo_donated.gif' alt='Donated' />
+                        <img src='./images/people_donated.gif' alt='Donated' />
                     </div>
                     <div className='textbox'>
                         <h2>1200+</h2>
@@ -136,29 +136,29 @@ const Donations = (props) => {
                 </Card>
                 <Card>
                     <div className='box'>
-                        <img src='./images/logo_donated.gif' alt='Donated' />
+                        <img src='./images/donation_received.gif' alt='Donated' />
                     </div>
                     <div className='textbox'>
-                        <h2>1200+</h2>
-                        <p>People Donated</p>
+                        <h2>$3 Cr+</h2>
+                        <p>Donations recieved</p>
                     </div>
                 </Card>
                 <Card>
                     <div className='box'>
-                        <img src='./images/logo_donated.gif' alt='Donated' />
+                        <img src='./images/disaster_event.gif' alt='Donated' />
                     </div>
                     <div className='textbox'>
-                        <h2>1200+</h2>
-                        <p>People Donated</p>
+                        <h2>30+</h2>
+                        <p>Disaster events</p>
                     </div>
                 </Card>
                 <Card>
                     <div className='box'>
-                        <img src='./images/logo_donated.gif' alt='Donated' />
+                        <img src='./images/families_benefited.gif' alt='Donated' />
                     </div>
                     <div className='textbox'>
-                        <h2>1200+</h2>
-                        <p>People Donated</p>
+                        <h2>600+</h2>
+                        <p>Families benifited</p>
                     </div>
                 </Card>
             </BottomSection>
@@ -186,62 +186,62 @@ const Donations = (props) => {
             </Heading>
             <DonationReason>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/trace.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Traceability</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        Whole donation process is traced along the entire distribution chain
                         </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/tax_benefits.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Tax Benefits</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        Donors will be entitled to a tax break when they give their money as a gift to a nonprofit organisation.
                         </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/accountability.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Accountability</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        All the donations received from the donors are taken accountability for.
                         </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/transparency.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Transparency </h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        All the donation transactions are transparent
                         </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/govt_controlled.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Government controlled</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        The entire donation process is monitored by the respective government  authority
                         </p>
                     </div>
                 </Wrap>
                 <Wrap>
-                    <div className='icon'></div>
+                    <div className='icon'><img src='./images/helping_hand.gif' alt='Donated' /></div>
                     <div className='line'></div>
                     <div className='text'>
-                        <h2>Tracebility</h2>
+                        <h2>Helping Hand</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        Donations help pay for emergency relief. It can provide protective equipment to prevent the spread of a highly contagious and deadly disease.
                         </p>
                     </div>
                 </Wrap>
@@ -791,17 +791,22 @@ const Wrap = styled.div`
     background-color: #dadada;
 
     .icon {
-        border: 1px solid black;
         height: 100px !important;
-        width: 115px !important;
+        width: 100px !important;
         inset: 0px;
-        display: block;
+        display: inline-flex;
         object-fit: cover;
         opacity: 1;
         /* transition: opacity 500ms ease-in-out 0s; */
         z-index: 1;
         top: 70px;
         /* left: 100px; */
+    
+    img {
+        border-radius: 20px;
+        /* opacity: 0.8; */
+        /* filter: invert(100%); */
+    }
     }
 
     .line {

@@ -150,7 +150,7 @@ const Statistics = (props) => {
 
 const Container = styled.div`
     height: 100vh;
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
     display: flex;
     justify-content: center;
     align-items: center;
