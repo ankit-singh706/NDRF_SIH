@@ -1,15 +1,12 @@
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import AboutSection from '../components/AboutSection'
+import DonationsContainer from '../components/DonationsContainer'
+import Statistics from '../components/Statistics'
+import httpClient from '../helpers/httpClient'
 
-import React,{useState,useEffect} from 'react';
-import styled from 'styled-components';
-import AboutSection from '../components/AboutSection';
-import DonationsContainer from '../components/DonationsContainer';
-import Statistics from '../components/Statistics';
-import httpClient from '../helpers/httpClient';
-
-const Homepage = (props) =>{
-
-    return(
-
+const Homepage = (props) => {
+    return (
         <Container>
             <DonationsContainer />
             <AboutSection />
@@ -20,7 +17,6 @@ const Homepage = (props) =>{
 
 const Container = styled.main`
     position: relative;
-    overflow-x: hidden;
     display: block;
     padding: 0 calc(2.5vw + 2px);
 
